@@ -1,0 +1,380 @@
+/* Project index and case-study finishing pass. */
+.intro>small:first-child,.intro h2,.intro>p:last-child{margin-left:0;text-align:left}
+.intro>p:last-child{margin-right:auto}
+.project-title{overflow-wrap:normal;word-break:normal;hyphens:none}
+
+/* Final layout repair: let all case-study content flow without grid overlap. */
+.project-copy{display:flex!important;flex-direction:column!important;align-items:stretch;gap:24px;min-width:0;align-content:normal}
+.project-copy>.project-index,.project-copy>.project-title,.project-copy>.project-description,.project-copy>.stats,.project-copy>.project-details{grid-column:auto;grid-row:auto;min-width:0;width:100%;margin:0}
+.project-copy>.project-title{line-height:1.02;margin:0!important;text-wrap:balance;overflow-wrap:normal;word-break:normal}
+.project-copy>.project-description{line-height:1.7}
+.project-copy>.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-content:start;grid-auto-rows:minmax(96px,auto);gap:8px;margin:0!important}
+.project-copy>.project-details{padding:16px 0 0;border-top:1px solid #ffffff24;border-bottom:0;margin:0!important}
+.project-copy>.project-details:only-of-type{grid-column:auto;grid-row:auto}
+.project-copy .detail-list{margin:14px 0 0}
+.project-copy .metric{min-width:0}
+.project-copy .metric strong{font-size:clamp(22px,2.5vw,36px);line-height:1.08;overflow-wrap:normal;word-break:keep-all}
+.project-copy .metric small{line-height:1.4}
+@media(max-width:700px){.project-copy{gap:20px}.project-copy>.stats{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:minmax(88px,auto)}.project-copy>.project-details{grid-column:auto;grid-row:auto}.project-copy>.project-title{font-size:clamp(38px,9vw,64px)}}
+/* Keep the music controls inside their art panel as four distinct rows. */
+.art-music .music-track-list,.music-track-list{grid-template-columns:minmax(0,1fr);grid-auto-flow:row;gap:8px;min-width:0}
+.music-track{width:100%;min-width:0;overflow:hidden}
+.music-track>span{min-width:0;flex:1;overflow-wrap:anywhere}
+.music-play{flex:none}
+@media(max-width:700px){.art-music .music-track-list,.music-track-list{grid-template-columns:minmax(0,1fr);gap:7px}}
+
+/* Split the detail column for the two metric-led social case studies. */
+.project-a-country-a-song>.art,.project-katman-edition>.art{grid-column:1;grid-row:1}
+.project-a-country-a-song>.project-copy,.project-katman-edition>.project-copy{grid-column:2;grid-row:1}
+.project-a-country-a-song>.project-side-details,.project-katman-edition>.project-side-details{grid-column:1;grid-row:2;align-self:start;width:100%;margin:0;padding:18px 0 0;border-top:1px solid #ffffff24;border-bottom:0}
+.project-a-country-a-song>.project-community-row,.project-katman-edition>.project-community-row{grid-column:1/-1;grid-row:3}
+.project-side-details .detail-heading{margin:0 0 14px}
+.project-side-details .detail-list{display:grid;grid-template-columns:1fr;gap:5px;margin:0}
+.project-side-details .detail-list dt{margin-top:13px;color:#fff;font-size:9px;text-transform:uppercase;letter-spacing:.1em}
+.project-side-details .detail-list dd{color:#c3c3c3;font-size:11px;line-height:1.65}
+.project-side-details .workflow-steps{gap:7px}
+.project-side-details .workflow-steps li{padding-left:28px}
+@media(max-width:700px){
+  .project-a-country-a-song>.art,.project-katman-edition>.art{grid-column:1;grid-row:1}
+  .project-a-country-a-song>.project-copy,.project-katman-edition>.project-copy{grid-column:1;grid-row:2}
+  .project-a-country-a-song>.project-side-details,.project-katman-edition>.project-side-details{grid-column:1;grid-row:3;margin:0;padding-top:17px}
+  .project-a-country-a-song>.project-community-row,.project-katman-edition>.project-community-row{grid-column:1;grid-row:4;margin-top:0}
+}
+
+/* Balance the split case studies, music controls, and skill-level labels. */
+.project-a-country-a-song>.project-workflow-details,.project-katman-edition>.project-workflow-details{grid-column:2;grid-row:2;align-self:start;width:100%;margin:0;padding:18px 0 0;border-top:1px solid #ffffff24;border-bottom:0}
+.project-workflow-details .detail-heading{margin:0 0 14px;color:#dbdbdb;font:500 11px 'DM Sans',sans-serif;letter-spacing:.08em}
+.project-workflow-details .workflow-steps{gap:9px;margin:0}
+.project-workflow-details .workflow-steps li{padding-left:30px;line-height:1.65}
+.art-music .music-track-list{top:132px;right:22px;bottom:112px;left:22px;grid-template-rows:repeat(4,minmax(0,1fr));align-content:stretch;gap:9px}
+.art-music .music-track{height:100%;padding:12px 14px}
+.skill-card{grid-template-rows:auto minmax(2.8em,auto) auto auto auto}
+.skill-level-label{grid-column:1/-1;grid-row:3;display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:2px;color:#999;font-size:9px;letter-spacing:.08em;text-transform:uppercase}
+.skill-level-label strong{color:#f0f0f0;font:600 10px 'DM Sans',sans-serif;letter-spacing:.04em}
+.skill-track{grid-row:4;margin:0}
+.skill-project{grid-row:5}
+@media(max-width:800px){
+  .project-a-country-a-song>.art,.project-katman-edition>.art{grid-column:1;grid-row:1}
+  .project-a-country-a-song>.project-copy,.project-katman-edition>.project-copy{grid-column:1;grid-row:2}
+  .project-a-country-a-song>.project-side-details,.project-katman-edition>.project-side-details{grid-column:1;grid-row:3}
+  .project-a-country-a-song>.project-workflow-details,.project-katman-edition>.project-workflow-details{grid-column:1;grid-row:4;margin:0;padding-top:17px}
+  .project-a-country-a-song>.project-community-row,.project-katman-edition>.project-community-row{grid-column:1;grid-row:5;margin-top:0}
+}
+@media(max-width:700px){.art-music .music-track-list{top:112px;right:14px;bottom:88px;left:14px;gap:7px}.art-music .music-track{padding:9px 11px}}
+@media(max-width:430px){.art-music .music-track-list{top:110px;right:12px;bottom:80px;left:12px}.art-music .music-track{padding:7px 10px}}
+
+/* Video cards share a taller row, with captions contained inside each card. */
+.video-grid{align-items:stretch;grid-auto-rows:minmax(430px,1fr)}
+.video-card{min-height:430px;min-width:0}
+.video-card summary{flex:1 1 auto;min-height:0;overflow:hidden}
+.video-poster{height:auto;min-height:0;aspect-ratio:auto;flex:1 1 auto}
+.video-card summary>p{flex:0 0 112px;height:112px;min-height:112px;overflow:hidden;padding:14px 18px 10px}
+.video-card summary>p small{display:-webkit-box;max-height:2.9em;overflow:hidden;-webkit-box-orient:vertical;-webkit-line-clamp:2}
+.skill-level-label strong{display:none}
+@media(max-width:700px){.video-grid{grid-auto-rows:minmax(430px,auto)}.video-poster{min-height:250px;aspect-ratio:auto}.video-card summary>p{flex-basis:112px;height:112px;min-height:112px}}
+
+/* Refined opening identity and a sequential, restrained hero glow. */
+header{align-items:center;gap:18px}
+.site-title{display:block;max-width:min(38vw,390px);color:#e2e2e2;font:400 12px/1.35 Manrope,sans-serif;letter-spacing:.045em;text-transform:none}
+.hero h1 span{opacity:0;animation:hero-glow-in 1.2s cubic-bezier(.2,.7,.2,1) .18s both}
+.hero>div>p:last-child{opacity:0;animation:hero-glow-in 1.25s cubic-bezier(.2,.7,.2,1) 1.48s both}
+.hero .hint{font-size:11.5px;letter-spacing:.15em;color:#c6c6c6}
+@keyframes hero-glow-in{0%{opacity:0;filter:blur(8px);transform:translateY(8px);text-shadow:0 0 0 #fff0}45%{opacity:1;filter:blur(0);transform:translateY(0);text-shadow:0 0 28px #ffffff75,0 0 65px #ffffff2b}100%{opacity:1;filter:blur(0);transform:translateY(0);text-shadow:0 0 0 #fff0}}
+@media(max-width:700px){.site-title{max-width:34vw;font-size:9px;letter-spacing:.025em}.hero .hint{font-size:10px}}
+@media(prefers-reduced-motion:reduce){.hero h1 span,.hero>div>p:last-child{opacity:1;animation:none;filter:none;transform:none;text-shadow:none}}
+
+/* Put project numbering over branded artwork and balance the lower detail pair. */
+.project-art-index{position:absolute;z-index:5;top:24px;left:26px;color:#fff;font:500 10px/1.2 'DM Sans',sans-serif;letter-spacing:.16em;text-shadow:0 1px 10px #0008}
+.project-category{margin:0 0 2px!important}
+.project-category span{color:#fff}
+.project-a-country-a-song>.project-side-details,.project-katman-edition>.project-side-details{grid-column:2;grid-row:2}
+.project-a-country-a-song>.project-workflow-details,.project-katman-edition>.project-workflow-details{grid-column:1;grid-row:2}
+@media(max-width:800px){
+  .project-art-index{top:18px;left:18px}
+  .project-a-country-a-song>.project-workflow-details,.project-katman-edition>.project-workflow-details{grid-column:1;grid-row:3}
+  .project-a-country-a-song>.project-side-details,.project-katman-edition>.project-side-details{grid-column:1;grid-row:4}
+  .project-a-country-a-song>.project-community-row,.project-katman-edition>.project-community-row{grid-column:1;grid-row:5}
+}
+
+/* A Country A Song: pair its label with the project number and balance both columns. */
+.project-art-index-country{display:flex;align-items:center;gap:14px;max-width:calc(100% - 40px)}
+.project-art-index-country>span{color:#fff;font:500 8px/1.4 'DM Sans',sans-serif;letter-spacing:.12em}
+.project-a-country-a-song .art-brand-caption{transform:translateY(20px)}
+.project-a-country-a-song>.project-copy .detail-tools{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 18px;align-items:start;margin:8px 0 6px}
+.project-a-country-a-song>.project-copy .detail-tools li{min-width:0;font-size:10px;line-height:1.65;overflow-wrap:anywhere}
+.project-a-country-a-song>.project-copy .detail-tools strong{margin-right:3px}
+.project-a-country-a-song>.project-side-details{align-self:stretch;display:flex;flex-direction:column;justify-content:center;padding:28px 20px}
+.project-a-country-a-song>.project-side-details .detail-heading{margin-bottom:18px;font-size:13px}
+.project-a-country-a-song>.project-side-details .detail-list{gap:10px;margin:0}
+.project-a-country-a-song>.project-side-details .detail-list dt{margin-top:13px;font-size:10px}
+.project-a-country-a-song>.project-side-details .detail-list dd{font-size:13px;line-height:1.8}
+@media(max-width:800px){.project-a-country-a-song>.project-copy .detail-tools{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px 14px}.project-a-country-a-song>.project-side-details{padding:22px 14px}}
+@media(max-width:520px){.project-art-index-country{align-items:flex-start;flex-direction:column;gap:5px}.project-art-index-country>span{font-size:7px}.project-a-country-a-song>.project-copy .detail-tools{grid-template-columns:1fr;gap:6px}}
+
+/* A Country A Song upper metadata and title spacing. */
+.project-art-index-country{top:24px;right:26px;max-width:none;display:flex;align-items:baseline;gap:12px;padding-bottom:11px;border-bottom:1px solid #ffffff2b}
+.project-art-index-country>strong{flex:none;color:#fff;font:600 9px/1.2 'DM Sans',sans-serif;letter-spacing:.14em}
+.project-art-index-country>span{color:#b8b8b8;font:500 8px/1.4 'DM Sans',sans-serif;letter-spacing:.12em}
+.project-a-country-a-song .project-title{font-size:clamp(49px,5.35vw,72px);line-height:.95;letter-spacing:-.085em}
+@media(max-width:800px){.project-art-index-country{top:18px;right:18px}.project-a-country-a-song .project-title{font-size:clamp(46px,8vw,66px)}}
+@media(max-width:520px){.project-art-index-country{align-items:baseline;flex-direction:row;flex-wrap:wrap;gap:6px 9px;padding-bottom:8px}.project-art-index-country>strong{font-size:8px}.project-art-index-country>span{font-size:7px}}
+
+/* Slightly improve small-copy legibility without changing the established type scale. */
+.project-copy>.project-description{font-size:13px}
+.project-side-details .detail-heading,.project-workflow-details .detail-heading{font-size:12px}
+.project-side-details .detail-list dt,.project-workflow-details .detail-list dt{font-size:10px}
+.project-side-details .detail-list dd,.project-workflow-details .workflow-steps li,.detail-tools li{font-size:12px}
+.project-copy .detail-tools li{font-size:11px}
+.project-art-index-country>strong,.project-katman-edition>.project-copy .project-category strong{font-size:10px}
+.project-art-index-country>span,.project-katman-edition>.project-copy .project-category span{font-size:9px}
+.video-card summary>p small{font-size:12px}
+.skill-tools{font-size:11px}
+.video-intro,.intro>p:last-child{font-size:15px}
+.project-brand-note{font-size:12px}
+@media(max-width:700px){.project-copy>.project-description{font-size:13px}.project-side-details .detail-list dd,.project-workflow-details .workflow-steps li{font-size:12px}.project-copy .detail-tools li{font-size:11px}.project-art-index-country>span,.project-katman-edition>.project-copy .project-category span{font-size:8px}.skill-tools{font-size:11px}}
+
+/* Carry the hero's soft glow across every requested headline, sweeping left to right. */
+@keyframes headline-glow-sweep{
+  0%{background-position:180% 0;filter:blur(3px);text-shadow:0 0 0 #fff0}
+  22%{filter:blur(0);text-shadow:0 0 24px var(--headline-glow-color,#ffffff55),0 0 50px var(--headline-glow-spread,#ffffff20)}
+  100%{background-position:-80% 0;filter:none;text-shadow:0 0 0 #fff0}
+}
+.headline-sweep-active{
+  background-image:linear-gradient(90deg,#f3f3f3 0%,#f3f3f3 42%,#fff 49%,#fff 52%,#f3f3f3 61%,#f3f3f3 100%);
+  background-size:250% 100%;background-position:180% 0;-webkit-background-clip:text;background-clip:text;color:transparent;
+  animation:headline-glow-sweep 1.7s cubic-bezier(.2,.7,.2,1) both;
+}
+.headline-sweep-active em{color:transparent}
+.footer>.headline-sweep-active{--headline-glow-color:#11111145;--headline-glow-spread:#11111120;background-image:linear-gradient(90deg,#151515 0%,#151515 42%,#777 49%,#999 52%,#151515 61%,#151515 100%)}
+@media(prefers-reduced-motion:reduce){
+ .headline-sweep-active{background:none;color:inherit;filter:none;text-shadow:none;animation:none}
+ .headline-sweep-active em{color:var(--violet)}
+}
+
+/* A Country A Song: place the title above its logo and the metadata above its summary. */
+.project .art-brand-title{max-width:100%;margin:0;color:#f3f3f3;text-align:center;font:400 clamp(32px,4.1vw,48px)/.96 Manrope,sans-serif;letter-spacing:-.075em;text-wrap:balance}
+.project-a-country-a-song>.project-copy{gap:14px}
+.project-a-country-a-song>.project-copy .project-category{display:flex;align-items:baseline;gap:12px;width:100%;margin:0!important;padding:0 0 10px;border-bottom:1px solid #ffffff2b}
+.project-a-country-a-song>.project-copy .project-category strong{flex:none;color:#fff;font:600 9px/1.2 'DM Sans',sans-serif;letter-spacing:.14em}
+.project-a-country-a-song>.project-copy .project-category span{color:#b8b8b8;font-size:8px;letter-spacing:.12em}
+.project-a-country-a-song>.project-copy .project-description{max-width:none;font-size:12px;line-height:1.55;letter-spacing:-.015em}
+.intro>p:last-child{max-width:none;white-space:nowrap}
+@media(max-width:700px){.intro>p:last-child{white-space:normal;max-width:100%}.project .art-brand-title{font-size:clamp(29px,7vw,40px)}.project-a-country-a-song>.project-copy .project-category{gap:8px}.project-a-country-a-song>.project-copy .project-category span{font-size:7px}.project-a-country-a-song>.project-copy .project-description{font-size:12px}}
+
+/* A Country A Song: align the one-line logo title with its upper metadata. */
+.project .art-brand-title{align-self:stretch;width:100%;padding-left:4px;text-align:left;white-space:nowrap;font-size:clamp(30px,3.6vw,42px);line-height:1}
+.project-a-country-a-song>.project-workflow-details{border-top:0;padding-top:0}
+.project-a-country-a-song .project-brand-note{margin:0 0 14px;padding:0 0 12px;border-bottom:1px solid #ffffff2b;color:#c3c3c3;font-size:11px;line-height:1.55}
+@media(max-width:800px){.project .art-brand-title{font-size:clamp(28px,5.2vw,40px)}}
+@media(max-width:520px){.project .art-brand-title{font-size:clamp(24px,7vw,32px)}.project-a-country-a-song .project-brand-note{white-space:normal}}
+
+/* Keep the A Country A Song heading directly centered above its logo. */
+.project-a-country-a-song .art-brand-panel{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px}
+.project-a-country-a-song .art-brand-title{align-self:center;width:100%;max-width:100%;padding-left:0;text-align:center;white-space:nowrap}
+
+/* Explicit shared column wrapper for the A Country A Song title and logo. */
+.project-a-country-a-song .art-brand-panel{align-items:center;text-align:center}
+.project-a-country-a-song .art-brand-stack{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;width:100%;max-width:100%;text-align:center}
+.project-a-country-a-song .art-brand-stack>.art-brand-title{align-self:center;width:100%;max-width:100%;margin:0;padding:0;text-align:center;white-space:nowrap}
+.project-a-country-a-song .art-brand-stack>.art-brand-frame{align-self:center;flex:none;margin:0 auto}
+.project-a-country-a-song .art-brand-panel{justify-content:flex-start;padding-top:28px}
+.project-a-country-a-song .art-brand-stack{justify-content:flex-start}
+.project-a-country-a-song .art-brand-stack>.art-brand-title{font-size:clamp(42px,5.2vw,58px)}
+@media(max-width:800px){.project-a-country-a-song .art-brand-panel{padding-top:22px}.project-a-country-a-song .art-brand-stack>.art-brand-title{font-size:clamp(36px,6vw,48px)}}
+@media(max-width:520px){.project-a-country-a-song .art-brand-stack>.art-brand-title{font-size:clamp(30px,8vw,40px)}}
+
+/* Separate section heading from the independently centered A Country logo area. */
+.project-a-country-a-song>.project-art-column{grid-column:1;grid-row:1;display:flex;flex-direction:column;align-items:stretch;gap:16px;min-width:0}
+.project-a-country-a-song .project-art-heading{align-self:stretch;width:100%;margin:0;color:#f3f3f3;text-align:center;font:400 clamp(42px,5.2vw,58px)/1 Manrope,sans-serif;letter-spacing:-.075em;white-space:nowrap}
+.project-a-country-a-song .art-brand-panel{align-items:center;justify-content:center;padding:28px;text-align:center}
+.project-a-country-a-song>.project-art-column>.art{align-self:stretch;width:100%;margin:0}
+@media(max-width:800px){.project-a-country-a-song>.project-art-column{grid-column:1;grid-row:1}.project-a-country-a-song .project-art-heading{font-size:clamp(34px,6vw,48px)}}
+@media(max-width:520px){.project-a-country-a-song .project-art-heading{font-size:clamp(28px,8vw,40px)}}
+
+/* KatmanEdition mirrors the left/right project composition. */
+.project-katman-edition>.project-art-column{grid-column:2;grid-row:1;display:flex;flex-direction:column;align-items:stretch;gap:16px;min-width:0}
+.project-katman-edition>.project-copy{grid-column:1;grid-row:1}
+.project-katman-edition .project-art-heading{align-self:stretch;width:100%;margin:0;color:#f3f3f3;text-align:center;font:400 clamp(42px,5.2vw,58px)/1 Manrope,sans-serif;letter-spacing:-.075em;white-space:nowrap}
+.project-katman-edition>.project-art-column>.art{align-self:stretch;width:100%;margin:0}
+.project-katman-edition>.project-copy .project-category{display:flex;align-items:baseline;gap:12px;width:100%;margin:0!important;padding:0 0 10px;border-bottom:1px solid #ffffff2b}
+.project-katman-edition>.project-copy .project-category strong{flex:none;color:#fff;font:600 9px/1.2 'DM Sans',sans-serif;letter-spacing:.14em}
+.project-katman-edition>.project-copy .project-category span{color:#b8b8b8;font-size:8px;letter-spacing:.12em}
+@media(max-width:800px){.project-katman-edition>.project-art-column{grid-column:1;grid-row:1}.project-katman-edition>.project-copy{grid-column:1;grid-row:2}.project-katman-edition .project-art-heading{font-size:clamp(34px,6vw,48px)}}
+@media(max-width:520px){.project-katman-edition .project-art-heading{font-size:clamp(28px,8vw,40px)}.project-katman-edition>.project-copy .project-category{gap:8px}.project-katman-edition>.project-copy .project-category span{font-size:7px}}
+.project-katman-edition>.project-workflow-details{border-top:0;padding-top:0}
+.project-katman-edition .project-brand-note{margin:0 0 14px;padding:0 0 12px;border-bottom:1px solid #ffffff2b;color:#c3c3c3;font-size:11px;line-height:1.55}
+.project-katman-edition>.project-copy .detail-tools{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 16px;align-items:start;margin:8px 0 6px}
+.project-katman-edition>.project-copy .detail-tools li{min-width:0;font-size:10px;line-height:1.65;overflow-wrap:anywhere}
+@media(max-width:520px){.project-katman-edition>.project-copy .detail-tools{grid-template-columns:1fr;gap:6px}}
+.project-katman-edition>.project-side-details{padding-top:0;border-top:0}
+.project-katman-edition>.project-side-details .project-brand-note{margin:0 0 14px;padding:0 0 12px;border-bottom:1px solid #ffffff2b;color:#c3c3c3;font-size:11px;line-height:1.55}
+
+/* Align the A Country A Song lower-column top rules. */
+.project-a-country-a-song{align-items:start}
+.project-a-country-a-song>.project-workflow-details,.project-a-country-a-song>.project-side-details{align-self:start}
+.project-a-country-a-song>.project-workflow-details{position:relative;border-top:1px solid #ffffff24;padding:18px 0 0}
+.project-a-country-a-song>.project-workflow-details .project-brand-note{position:absolute;top:-25px;left:0;margin:0;padding:0;border:0;color:#c3c3c3;font-size:11px;line-height:1.55;white-space:nowrap}
+.project-a-country-a-song>.project-side-details{display:flex;flex-direction:column;justify-content:flex-start;padding:18px 20px 0}
+@media(max-width:800px){.project-a-country-a-song>.project-side-details{padding:18px 14px 0}.project-a-country-a-song>.project-workflow-details .project-brand-note{position:static;margin:0 0 14px;padding:0;white-space:normal}}
+
+/* Mirror the same note and aligned lower-column rules for KatmanEdition. */
+.project-katman-edition{align-items:start}
+.project-katman-edition>.project-workflow-details,.project-katman-edition>.project-side-details{align-self:start}
+.project-katman-edition>.project-workflow-details{border-top:1px solid #ffffff24;padding:18px 0 0}
+.project-katman-edition>.project-side-details{position:relative;border-top:1px solid #ffffff24;padding:18px 20px 0}
+.project-katman-edition>.project-side-details .project-brand-note{position:absolute;top:-25px;right:0;margin:0;padding:0;border:0;color:#c3c3c3;font-size:11px;line-height:1.55;white-space:nowrap}
+@media(max-width:800px){.project-katman-edition>.project-side-details{padding:18px 14px 0}.project-katman-edition>.project-side-details .project-brand-note{position:static;margin:0 0 14px;padding:0;white-space:normal}}
+
+/* Keep KatmanEdition's title flush with the left project index and center its logo. */
+.project-katman-edition{align-items:start}
+.project-katman-edition>.project-copy{align-self:start;margin-top:0;padding-top:0}
+.project-katman-edition>.project-art-column{align-self:stretch;margin-top:0;padding-top:0}
+.project-katman-edition>.project-art-column{justify-content:flex-start}
+.project-katman-edition .project-art-heading{align-self:stretch;margin:0;padding:0;line-height:1}
+.project-katman-edition>.project-art-column>.art{flex:1 1 auto;margin:0}
+.project-katman-edition .art-brand-panel{align-items:center;justify-content:center;text-align:center}
+.project-katman-edition{position:relative}
+.project-katman-edition>.project-workflow-details{grid-column:2;grid-row:2;border-top:0;padding-top:18px}
+.project-katman-edition>.project-side-details{grid-column:1;grid-row:2;border-top:0;padding-top:18px}
+.project-katman-edition>.project-side-details,.project-katman-edition>.project-workflow-details{position:relative;z-index:1}
+.project-katman-edition::before{content:"";position:absolute;z-index:1;grid-column:1/-1;grid-row:2;top:0;left:0;right:0;border-top:1px solid #ffffff24;pointer-events:none}
+.project-katman-edition>.project-side-details .detail-heading,.project-katman-edition>.project-workflow-details .detail-heading{font-size:13px}
+.project-katman-edition>.project-side-details .detail-list dt{font-size:10px}
+.project-katman-edition>.project-side-details .detail-list dd,.project-katman-edition>.project-workflow-details .workflow-steps li{font-size:13px;line-height:1.75}
+@media(max-width:800px){.project-katman-edition>.project-copy,.project-katman-edition>.project-art-column{align-self:start}.project-katman-edition::before{display:none}.project-katman-edition>.project-side-details{grid-column:1;grid-row:3;border-top:1px solid #ffffff24}.project-katman-edition>.project-workflow-details{grid-column:1;grid-row:4;border-top:1px solid #ffffff24}}
+
+/* Match A Country A Song's split rules, placing KatmanEdition's note at its right rule start. */
+.project-katman-edition::before{display:none}
+.project-katman-edition>.project-side-details{grid-column:1;grid-row:2;border-top:1px solid #ffffff24;padding-top:18px}
+.project-katman-edition>.project-workflow-details{grid-column:2;grid-row:2;position:relative;border-top:1px solid #ffffff24;padding-top:18px}
+.project-katman-edition>.project-workflow-details .project-brand-note{position:absolute;top:-25px;left:0;margin:0;padding:0;border:0;color:#c3c3c3;font-size:11px;line-height:1.55;text-align:left;white-space:nowrap}
+@media(max-width:800px){.project-katman-edition>.project-side-details{grid-column:1;grid-row:3}.project-katman-edition>.project-workflow-details{grid-column:1;grid-row:4}.project-katman-edition>.project-workflow-details .project-brand-note{position:static;margin:0 0 14px;padding:0;border:0;white-space:normal}}
+
+/* Keep the perfume project's index and title at the top of its copy column. */
+.project-perfume-visual-edit{align-items:stretch}
+.project-perfume-visual-edit>.art{align-self:stretch;height:auto;min-height:min(57vw,690px)}
+.project-perfume-visual-edit>.project-copy{align-self:stretch;min-height:100%;margin-top:0}
+.project-perfume-visual-edit>.project-copy>.project-details{display:flex;flex:1 1 auto;flex-direction:column;min-height:0}
+.project-perfume-visual-edit>.project-copy>.project-details>.detail-list{display:flex;flex:1 1 auto;flex-direction:column;min-height:0}
+.project-perfume-visual-edit>.project-copy>.project-details>.detail-list>dt:last-of-type{margin-top:auto}
+.project-perfume-visual-edit .detail-tools{margin-bottom:0}
+.project-perfume-visual-edit>.project-copy>.project-description{max-width:none;font-size:clamp(9px,.82vw,12px);white-space:nowrap}
+@media(max-width:700px){.project-perfume-visual-edit>.art{height:78vw;min-height:300px;max-height:540px}.project-perfume-visual-edit>.project-copy>.project-details,.project-perfume-visual-edit>.project-copy>.project-details>.detail-list{flex:0 0 auto}.project-perfume-visual-edit>.project-copy>.project-details>.detail-list>dt:last-of-type{margin-top:8px}}
+@media(max-width:520px){.project-perfume-visual-edit>.project-copy>.project-description{font-size:12px;white-space:normal}}
+
+/* Put the perfume artwork on the left and its written case study on the right. */
+.project-perfume-visual-edit>.project-art-column{grid-column:1;grid-row:1;display:flex;flex-direction:column;align-self:stretch;gap:16px;min-width:0}
+.project-perfume-visual-edit>.project-art-column>.art{flex:1 1 auto;align-self:stretch;width:100%;height:auto;min-height:min(57vw,690px);margin:0}
+.project-perfume-visual-edit>.project-copy{grid-column:2;grid-row:1;align-self:stretch}
+.project-perfume-visual-edit>.project-copy>.project-title{font-size:clamp(30px,4.2vw,58px);line-height:.98;white-space:nowrap}
+.project-perfume-visual-edit .project-art-index-perfume{display:flex;align-items:baseline;gap:12px;width:100%;margin:0;padding:0 0 11px;border-bottom:1px solid #ffffff2b}
+.project-perfume-visual-edit .project-art-index-perfume>strong{flex:none;color:#fff;font:600 9px/1.2 'DM Sans',sans-serif;letter-spacing:.14em}
+.project-perfume-visual-edit .project-art-index-perfume>span{color:#b8b8b8;font:500 8px/1.4 'DM Sans',sans-serif;letter-spacing:.12em}
+.project-perfume-visual-edit>.project-copy>.project-description{font-size:14px;line-height:1.55;white-space:nowrap}
+.project-perfume-visual-edit>.project-copy>.project-details{order:3;flex:0 0 auto}
+.project-perfume-visual-edit>.project-copy>.project-details>.detail-list{display:block;flex:0 0 auto}
+.project-perfume-visual-edit>.project-copy>.project-details>.detail-list>dt:last-of-type{margin-top:8px}
+.project-perfume-visual-edit>.project-copy>.stats{order:4;grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch;margin-top:auto!important}
+@media(min-width:701px) and (max-width:900px){.project-perfume-visual-edit>.project-copy>.project-description{font-size:12px;white-space:normal}}
+@media(max-width:700px){.project-perfume-visual-edit>.project-art-column{grid-column:1;grid-row:1}.project-perfume-visual-edit>.project-art-column>.art{height:78vw;min-height:300px;max-height:540px}.project-perfume-visual-edit>.project-copy{grid-column:1;grid-row:2}.project-perfume-visual-edit>.project-copy>.project-title{font-size:clamp(30px,7vw,44px)}}
+@media(max-width:360px){.project-perfume-visual-edit>.project-copy>.project-title{font-size:27px}}
+
+/* Anchor the perfume case study details and tools at the artwork's lower edge. */
+.project-perfume-visual-edit>.project-copy>.project-description{flex:1 1 0;display:flex;align-items:center;max-width:460px;min-height:0;font-size:18px;line-height:1.55;white-space:normal}
+.project-perfume-visual-edit>.project-copy>.stats{order:2;margin:0!important}
+.project-perfume-visual-edit>.project-copy>.project-details{order:3;flex:0 0 auto}
+.project-perfume-visual-edit>.project-copy>.project-details>.detail-list{display:grid;flex:0 0 auto;margin:14px 0 0}
+.project-perfume-visual-edit>.project-copy>.project-details>.detail-list>dt:last-of-type{margin-top:8px}
+@media(max-width:700px){.project-perfume-visual-edit>.project-copy>.project-description{display:block;flex:0 0 auto;max-width:none;font-size:16px;white-space:normal}}
+
+/* Mirror the perfume layout for the creator gallery: metadata above the left photos, details at the bottom right. */
+.project-creator-visual-assets{align-items:stretch}
+.project-creator-visual-assets>.project-art-column{grid-column:2;grid-row:1;display:flex;flex-direction:column;align-self:stretch;gap:16px;min-width:0}
+.project-creator-visual-assets>.project-art-column>.art{flex:1 1 auto;align-self:stretch;width:100%;height:auto;min-height:min(57vw,690px);margin:0}
+.project-creator-visual-assets>.project-copy{grid-column:1;grid-row:1;align-self:stretch;min-height:100%}
+.project-creator-visual-assets .project-art-index-creator{display:flex;align-items:baseline;gap:12px;width:100%;margin:0;padding:0 0 11px;border-bottom:1px solid #ffffff2b}
+.project-creator-visual-assets .project-art-index-creator>strong{flex:none;color:#fff;font:600 9px/1.2 'DM Sans',sans-serif;letter-spacing:.14em}
+.project-creator-visual-assets .project-art-index-creator>span{color:#b8b8b8;font:500 8px/1.4 'DM Sans',sans-serif;letter-spacing:.12em}
+.project-creator-visual-assets>.project-copy>.project-title{font-size:clamp(46px,5.5vw,72px);line-height:.98}
+.project-creator-visual-assets>.project-copy>.project-title{margin-top:-8px!important;font-size:clamp(52px,6vw,78px);line-height:.92;letter-spacing:-.08em}
+.project-creator-visual-assets>.project-copy>.stats{order:2;grid-template-columns:repeat(3,minmax(0,1fr));margin:0!important}
+.project-creator-visual-assets>.project-copy>.project-description{order:1;flex:1 1 0;display:flex;align-items:center;max-width:460px;min-height:0;font-size:17px;line-height:1.55;white-space:normal}
+.project-creator-visual-assets>.project-copy>.project-details{order:3;flex:0 0 auto}
+.project-creator-visual-assets>.project-copy>.project-details>.detail-list{display:grid;flex:0 0 auto;margin:14px 0 0}
+.project-creator-visual-assets>.project-copy>.project-details>.detail-tools{display:grid;grid-template-columns:1fr;gap:7px;margin:8px 0 0}
+.project-creator-visual-assets>.project-copy>.project-details>.detail-tools li{font-size:11px;line-height:1.65}
+.project-creator-visual-assets>.project-copy>.project-description{order:1;display:block;flex:0 0 auto;align-self:stretch;margin-top:auto!important;margin-bottom:auto!important;max-width:460px;min-height:0;font-size:17px;line-height:1.55;white-space:normal}
+@media(max-width:700px){.project-creator-visual-assets>.project-art-column{grid-column:1;grid-row:1}.project-creator-visual-assets>.project-art-column>.art{height:78vw;min-height:300px;max-height:540px}.project-creator-visual-assets>.project-copy{grid-column:1;grid-row:2}.project-creator-visual-assets>.project-copy>.project-title{margin-top:0!important;font-size:clamp(40px,9vw,64px)}.project-creator-visual-assets>.project-copy>.project-description{display:block;flex:0 0 auto;max-width:none;font-size:16px}}
+
+/* Give the children's story the same photo-left, copy-right case-study rhythm. */
+.project-ai-childrens-stories{align-items:stretch}
+.project-ai-childrens-stories>.art{grid-column:1;grid-row:1;align-self:stretch;height:auto;min-height:min(57vw,690px)}
+.project-ai-childrens-stories>.project-copy{grid-column:2;grid-row:1;align-self:stretch;min-height:100%}
+.project-ai-childrens-stories>.project-copy>.project-title{font-size:clamp(30px,3.6vw,50px);line-height:1;letter-spacing:-.075em;white-space:nowrap}
+.project-ai-childrens-stories>.project-copy>.project-description{order:1;flex:0 0 auto;align-self:stretch;margin-top:auto!important;margin-bottom:auto!important;max-width:460px;font-size:17px;line-height:1.55;white-space:normal}
+.project-ai-childrens-stories>.project-copy>.stats{order:2;grid-template-columns:repeat(3,minmax(0,1fr));margin:0!important}
+.project-ai-childrens-stories>.project-copy>.project-details{order:3;flex:0 0 auto}
+.project-ai-childrens-stories>.project-copy>.project-details>.detail-list{display:grid;margin:14px 0 0}
+.project-ai-childrens-stories>.project-copy>.project-details>.detail-tools{display:grid;grid-template-columns:1fr;gap:7px;margin:8px 0 0}
+.project-ai-childrens-stories>.project-copy>.project-details>.detail-tools li{font-size:11px;line-height:1.65}
+.project-ai-childrens-stories>.project-video{grid-column:1/-1;justify-self:center;width:min(100%,460px);margin:24px auto 0;text-align:center}
+@media(max-width:700px){.project-ai-childrens-stories>.art{grid-column:1;grid-row:1;height:78vw;min-height:300px;max-height:540px}.project-ai-childrens-stories>.project-copy{grid-column:1;grid-row:2}.project-ai-childrens-stories>.project-copy>.project-title{font-size:clamp(30px,8vw,44px)}.project-ai-childrens-stories>.project-copy>.project-description{margin:0!important;max-width:none;font-size:16px}.project-ai-childrens-stories>.project-video{grid-column:1}}
+.project-ai-childrens-stories>.project-art-column{grid-column:1;grid-row:1;display:flex;flex-direction:column;align-self:stretch;gap:16px;min-width:0}
+.project-ai-childrens-stories>.project-art-column>.art{flex:1 1 auto;align-self:stretch;width:100%;height:auto;min-height:min(57vw,690px);margin:0}
+.project-ai-childrens-stories>.project-copy{grid-column:2;grid-row:1;align-self:stretch}
+.project-ai-childrens-stories .project-art-index-story{display:flex;align-items:baseline;gap:12px;width:100%;margin:0;padding:0 0 11px;border-bottom:1px solid #ffffff2b}
+.project-ai-childrens-stories .project-art-index-story>strong{flex:none;color:#fff;font:600 9px/1.2 'DM Sans',sans-serif;letter-spacing:.14em}
+.project-ai-childrens-stories .project-art-index-story>span{color:#b8b8b8;font:500 8px/1.4 'DM Sans',sans-serif;letter-spacing:.12em}
+@media(max-width:700px){.project-ai-childrens-stories>.project-art-column{grid-column:1;grid-row:1}.project-ai-childrens-stories>.project-art-column>.art{height:78vw;min-height:300px;max-height:540px}.project-ai-childrens-stories>.project-copy{grid-column:1;grid-row:2}}
+
+/* Put the multilingual video on the right and keep its story and details on the left. */
+.project-multilingual-adaptation{align-items:stretch}
+.project-multilingual-adaptation>.project-art-column{grid-column:2;grid-row:1;display:flex;flex-direction:column;align-self:stretch;gap:16px;min-width:0}
+.project-multilingual-adaptation>.project-art-column>.art{flex:1 1 auto;align-self:stretch;width:100%;height:auto;min-height:min(57vw,690px);margin:0}
+.project-multilingual-adaptation>.project-copy{grid-column:1;grid-row:1;align-self:stretch;min-height:100%}
+.project-multilingual-adaptation .project-art-index-multilingual{display:flex;align-items:baseline;gap:12px;width:100%;margin:0;padding:0 0 11px;border-bottom:1px solid #ffffff2b}
+.project-multilingual-adaptation .project-art-index-multilingual>strong{flex:none;color:#fff;font:600 9px/1.2 'DM Sans',sans-serif;letter-spacing:.14em}
+.project-multilingual-adaptation .project-art-index-multilingual>span{color:#b8b8b8;font:500 8px/1.4 'DM Sans',sans-serif;letter-spacing:.12em}
+.project-multilingual-adaptation>.project-copy>.project-description{order:1;flex:0 0 auto;align-self:stretch;margin-top:auto!important;margin-bottom:auto!important;max-width:460px;font-size:17px;line-height:1.55;white-space:normal}
+.project-multilingual-adaptation>.project-copy>.project-title{font-size:clamp(36px,4vw,52px);line-height:.98;letter-spacing:-.08em;white-space:nowrap}
+.project-multilingual-adaptation>.project-copy>.stats{order:2;grid-template-columns:repeat(3,minmax(0,1fr));margin:0!important}
+.project-multilingual-adaptation>.project-copy>.project-details{order:3;flex:0 0 auto}
+.project-multilingual-adaptation>.project-copy>.project-details>.detail-list{display:grid;margin:14px 0 0}
+.project-multilingual-adaptation>.project-copy>.project-details>.detail-tools{display:grid;grid-template-columns:1fr;gap:7px;margin:8px 0 0}
+.project-multilingual-adaptation>.project-copy>.project-details>.detail-tools li{font-size:11px;line-height:1.65}
+@media(max-width:700px){.project-multilingual-adaptation>.project-art-column{grid-column:1;grid-row:1}.project-multilingual-adaptation>.project-art-column>.art{height:78vw;min-height:300px;max-height:540px}.project-multilingual-adaptation>.project-copy{grid-column:1;grid-row:2}.project-multilingual-adaptation>.project-copy>.project-title{font-size:clamp(32px,8vw,48px)}.project-multilingual-adaptation>.project-copy>.project-description{margin:0!important;max-width:none;font-size:16px}}
+
+/* Apply the same video-left case-study layout to the historical animation. */
+.project-kanuni-animation{align-items:stretch}
+.project-kanuni-animation>.project-art-column{grid-column:1;grid-row:1;display:flex;flex-direction:column;align-self:stretch;gap:16px;min-width:0}
+.project-kanuni-animation>.project-art-column>.art{flex:1 1 auto;align-self:stretch;width:100%;height:auto;min-height:min(57vw,690px);margin:0}
+.project-kanuni-animation>.project-copy{grid-column:2;grid-row:1;align-self:stretch;min-height:100%}
+.project-kanuni-animation .project-art-index-kanuni{display:flex;align-items:baseline;gap:12px;width:100%;margin:0;padding:0 0 11px;border-bottom:1px solid #ffffff2b}
+.project-kanuni-animation .project-art-index-kanuni>strong{flex:none;color:#fff;font:600 9px/1.2 'DM Sans',sans-serif;letter-spacing:.14em}
+.project-kanuni-animation .project-art-index-kanuni>span{color:#b8b8b8;font:500 8px/1.4 'DM Sans',sans-serif;letter-spacing:.12em}
+.project-kanuni-animation>.project-copy>.project-title{font-size:clamp(30px,3.4vw,44px);line-height:1;letter-spacing:-.075em;white-space:nowrap}
+.project-kanuni-animation>.project-copy>.project-description{order:1;flex:0 0 auto;align-self:stretch;margin-top:auto!important;margin-bottom:auto!important;max-width:460px;font-size:17px;line-height:1.55;white-space:normal}
+.project-kanuni-animation>.project-copy>.stats{order:2;grid-template-columns:repeat(3,minmax(0,1fr));margin:0!important}
+.project-kanuni-animation>.project-copy>.project-details{order:3;flex:0 0 auto}
+.project-kanuni-animation>.project-copy>.project-details>.detail-list{display:grid;margin:14px 0 0}
+.project-kanuni-animation>.project-copy>.project-details>.detail-tools{display:grid;grid-template-columns:1fr;gap:7px;margin:8px 0 0}
+.project-kanuni-animation>.project-copy>.project-details>.detail-tools li{font-size:11px;line-height:1.65}
+.project-kanuni-animation>.project-video{grid-column:1/-1;justify-self:center;width:min(100%,460px);margin:24px auto 0;text-align:center}
+@media(max-width:700px){.project-kanuni-animation>.project-art-column{grid-column:1;grid-row:1}.project-kanuni-animation>.project-art-column>.art{height:78vw;min-height:300px;max-height:540px}.project-kanuni-animation>.project-copy{grid-column:1;grid-row:2}.project-kanuni-animation>.project-copy>.project-title{font-size:clamp(28px,7vw,40px)}.project-kanuni-animation>.project-copy>.project-description{margin:0!important;max-width:none;font-size:16px}.project-kanuni-animation>.project-video{grid-column:1}}
+
+/* Put the remix/beat soundboard on the right and its project notes on the left. */
+.project-remix-beat-flstudio{align-items:stretch}
+.project-remix-beat-flstudio>.project-art-column{grid-column:2;grid-row:1;display:flex;flex-direction:column;align-self:stretch;gap:16px;min-width:0}
+.project-remix-beat-flstudio>.project-art-column>.art{flex:1 1 auto;align-self:stretch;width:100%;height:auto;min-height:min(57vw,690px);margin:0}
+.project-remix-beat-flstudio>.project-copy{grid-column:1;grid-row:1;align-self:stretch;min-height:100%}
+.project-remix-beat-flstudio .project-art-index-remix{display:flex;align-items:baseline;gap:12px;width:100%;margin:0;padding:0 0 11px;border-bottom:1px solid #ffffff2b}
+.project-remix-beat-flstudio .project-art-index-remix>strong{flex:none;color:#fff;font:600 9px/1.2 'DM Sans',sans-serif;letter-spacing:.14em}
+.project-remix-beat-flstudio .project-art-index-remix>span{color:#b8b8b8;font:500 8px/1.4 'DM Sans',sans-serif;letter-spacing:.12em}
+.project-remix-beat-flstudio>.project-copy>.project-description{flex:0 0 auto;align-self:stretch;margin-top:auto!important;margin-bottom:auto!important;max-width:460px;font-size:17px;line-height:1.55;white-space:normal}
+.project-remix-beat-flstudio>.project-copy>.stats{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:0!important}
+.project-remix-beat-flstudio>.project-copy>.stats .metric strong{font-size:clamp(16px,1.8vw,23px);white-space:nowrap}
+.project-remix-beat-flstudio>.project-copy>.project-details{flex:0 0 auto}
+.project-remix-beat-flstudio>.project-copy>.project-details>.detail-list{display:grid;margin:14px 0 0}
+.project-remix-beat-flstudio>.project-copy>.project-details>.detail-tools{display:grid;grid-template-columns:1fr;gap:7px;margin:8px 0 0}
+.project-remix-beat-flstudio>.project-copy>.project-details>.detail-tools li{font-size:11px;line-height:1.65}
+@media(max-width:700px){.project-remix-beat-flstudio>.project-art-column{grid-column:1;grid-row:1}.project-remix-beat-flstudio>.project-art-column>.art{height:78vw;min-height:300px;max-height:540px}.project-remix-beat-flstudio>.project-copy{grid-column:1;grid-row:2}.project-remix-beat-flstudio>.project-copy>.project-title{font-size:clamp(40px,9vw,60px)}.project-remix-beat-flstudio>.project-copy>.project-description{margin:0!important;max-width:none;font-size:16px}}
