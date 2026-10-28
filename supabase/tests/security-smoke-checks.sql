@@ -1,0 +1,8 @@
+-- Manual security smoke checks after applying the migration.
+-- 1. As an unauthenticated visitor, SELECT from public.portfolio_content succeeds.
+-- 2. As anon, INSERT/UPDATE/DELETE on portfolio_content are denied.
+-- 3. As an authenticated Google user absent from portfolio_admins, INSERT/UPDATE and
+--    Storage INSERT/UPDATE/DELETE in portfolio-media are denied.
+-- 4. After an administrator UUID is inserted through the SQL Editor, that account can
+--    read/update portfolio content and upload/delete files; another signed-in account cannot.
+-- Run these checks with two real test Google accounts in a non-production Supabase project.
